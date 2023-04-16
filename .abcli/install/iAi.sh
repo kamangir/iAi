@@ -11,7 +11,7 @@ function abcli_install_iAi() {
 
     conda activate "$env_name"
 
-    conda install -y instapy
+    pip3 install instapy
 
     conda deactivate
 }
