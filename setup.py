@@ -1,11 +1,11 @@
 from setuptools import setup
 
-from blue_plugin import NAME, VERSION
+from iAi import NAME, VERSION
 
 setup(
     name=NAME,
     author="arash@kamangir.net",
     version=VERSION,
-    description="template for an abcli plugin",
+    description="OpenAI agent for Instagram",
     packages=[NAME],
 )
