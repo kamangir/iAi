@@ -8,9 +8,9 @@ function iAi() {
     local task=$(abcli_unpack_keyword $1 help)
 
     if [ $task == "help" ] ; then
-        local options="-"
+        local options="filename=<filename.png>"
         abcli_show_usage "iAi post <object_name>$ABCUL[$options]" \
-            "task things."
+            "post <object_name>/<filename.png> on Instagram."
 
         # iAi_task "$@""
 
@@ -26,9 +26,9 @@ function iAi() {
         return
     fi
 
-    if [ "$task" == "task" ] ; then
+    if [ "$task" == "post" ] ; then
         python3 -m iAi \
-            task \
+            $task \
             --what $(abcli_clarify_input $2 all) \
             ${@:3}
         return

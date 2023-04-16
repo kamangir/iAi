@@ -1,5 +1,5 @@
 NAME = "iAi"
 
-VERSION = "1.10.1"
+VERSION = "1.11.1"
 
 from .functions import *
