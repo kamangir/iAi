@@ -34,7 +34,9 @@ function iAi() {
         return
     fi
 
+    conda activate iAi
     python3 -m iAi \
         $task \
         ${@:2}
+    conda activate abcli
 }

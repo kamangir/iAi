@@ -9,12 +9,17 @@ parser = argparse.ArgumentParser(NAME, description=f"{NAME}-{VERSION}")
 parser.add_argument(
     "task",
     type=str,
-    help="version",
+    help="validate|version",
 )
 args = parser.parse_args()
 
 success = False
-if args.task == "version":
+if args.task == "validate":
+    import instapy
+
+    print(f"instapy-{instapy.__version__}")
+    success = True
+elif args.task == "version":
     print(f"{NAME}-{VERSION}")
     success = True
 else:
