@@ -19,6 +19,7 @@ function abcli_install_iAi() {
     conda install -y -c conda-forge jupyter
 
     pip3 install pillow
+    pip3 install PyMySQL==0.10.1
 
     pushd $abcli_path_git > /dev/null
 

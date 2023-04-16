@@ -8,4 +8,4 @@ iAi help [verbose]
 
 ![image](./assets/marquee.png)
 
-`iAi` uses [InstaPy](https://github.com/InstaPy/InstaPy).
+`iAi` uses [instagrapi](https://github.com/adw0rd/instagrapi).
