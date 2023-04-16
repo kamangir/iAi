@@ -8,6 +8,9 @@ function iAi() {
     local task=$(abcli_unpack_keyword $1 help)
 
     if [ $task == "help" ] ; then
+        abcli_show_usage "iAi notebook" \
+            "open iAi notebook."
+
         local options="filename=<filename.png>"
         abcli_show_usage "iAi post <object_name>$ABCUL[$options]" \
             "post <object_name>/<filename.png> on Instagram."
@@ -23,6 +26,15 @@ function iAi() {
     local function_name=iAi_$task
     if [[ $(type -t $function_name) == "function" ]] ; then
         $function_name "${@:2}"
+        return
+    fi
+
+    if [ "$task" == "notebook" ] ; then
+        pushd $abcli_path_git/iAi/notebooks > /dev/null
+        conda activate iAi
+        jupyter notebook
+        conda activate abcli
+        popd > /dev/null
         return
     fi
 
