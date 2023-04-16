@@ -15,9 +15,9 @@ args = parser.parse_args()
 
 success = False
 if args.task == "validate":
-    import instapy
+    import instagrapi
 
-    print(f"instapy-{instapy.__version__}")
+    print(f"{instagrapi}")
     success = True
 elif args.task == "version":
     print(f"{NAME}-{VERSION}")

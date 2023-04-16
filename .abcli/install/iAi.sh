@@ -11,25 +11,18 @@ function abcli_install_iAi() {
 
     conda activate "$env_name"
 
-    # https://github.com/InstaPy/InstaPy/issues/6692#issuecomment-1474058959
-    abcli_log "installing emoji"
-    pip3 uninstall emoji --yes
-    pip3 install emoji==1.7
+    # https://github.com/adw0rd/instagrapi
+    echo "installing instagrapi"
+    python3 -m pip install instagrapi
 
-    # https://github.com/InstaPy/InstaPy/issues/6697#issuecomment-1474058270
-    abcli_log "installing clarifai"
-    pip3 uninstall clarifai --yes
-    pip3 install clarifai==2.6.2
-
-    abcli_log "installing instapy"
-    pip3 install instapy
-
-    abcli_log "installing jupyter notebook"
+    echo "installing jupyter notebook"
     conda install -y -c conda-forge jupyter
+
+    pip3 install pillow
 
     pushd $abcli_path_git > /dev/null
 
-    abcli_log "installing awesome-bash-cli"
+    echo "installing awesome-bash-cli"
     cd awesome-bash-cli
     pip3 install -e .
     
@@ -42,4 +35,4 @@ function abcli_install_iAi() {
     conda deactivate
 }
 
-abcli_install_module iAi 111
+abcli_install_module iAi 113
